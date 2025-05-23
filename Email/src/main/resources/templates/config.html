@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Email Configuration</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+    <h2>Email Configuration</h2>
+    <p><strong>Language:</strong> <span th:text="${emailConfig.language}"></span></p>
+    <p><strong>Page Size:</strong> <span th:text="${emailConfig.pageSize}"></span> emails per page</p>
+    <a href="/edit">Edit Configuration</a>
+</body>
+</html>

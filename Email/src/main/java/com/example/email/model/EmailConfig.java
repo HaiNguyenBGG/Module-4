@@ -1,0 +1,19 @@
+
+package com.example.email.model;
+public class EmailConfig {
+    private String language;
+    private int pageSize;
+
+    public EmailConfig(){
+        this.language = "English";
+        this.pageSize = 10;
+    }
+
+    public String getLanguage() {return language;}
+
+    public void setLanguage(String language) {this.language = language;}
+
+    public int getPageSize() {return pageSize;}
+
+    public void setPageSize(int pageSize) {this.pageSize = pageSize;}
+}

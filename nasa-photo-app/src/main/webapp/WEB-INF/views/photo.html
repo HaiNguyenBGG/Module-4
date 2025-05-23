@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NASA Photo of the Day</title>
+</head>
+<body>
+<h1>NASA Photo of the Day</h1>
+<h2 th:text="${photo.title}"></h2>
+<img th:src="${photo.url}" width="600">
+<p th:text="${photo.explanation}"></p>
+
+<h3>Leave a comment</h3>
+<form action="/comment" method="post">
+    Name: <input type="text" name="author" required><br>
+    Comment: <textarea name="content" required></textarea><br>
+    Rating: <input type="number" name="rating" min="1" max="5" required><br>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Comments</h3>
+<div th:each="comment : ${comments}">
+    <p><strong th:text="${comment.author}"></strong>: <span th:text="${comment.content}"></span></p>
+    <p>Rating: <span th:text="${comment.rating}"></span> | Likes: <span th:text="${comment.likes}"></span></p>
+    <form action="/like/{id}" method="post">
+        <button type="submit">Like</button>
+    </form>
+</div>
+</body>
+</html>

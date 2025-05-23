@@ -1,0 +1,11 @@
+
+package com.example.email.model;
+public class Product {
+    private String language;
+    private int pageSize;
+    public EmailConfig(){
+        this.language = "English";
+        this.pageSize = 10;
+    }
+
+}

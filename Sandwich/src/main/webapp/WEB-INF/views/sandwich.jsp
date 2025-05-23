@@ -1,0 +1,18 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+
+<html>
+<head>
+    <title>Chọn gia vị cho Sandwich</title>
+</head>
+<body>
+<h2>Chọn gia vị bạn thích:</h2>
+<form action="save" method="post">
+    <input type="checkbox" name="condiment" value="Xà lách"> Xà lách <br>
+    <input type="checkbox" name="condiment" value="Cà chua"> Cà chua <br>
+    <input type="checkbox" name="condiment" value="Mù tạt"> Mù tạt <br>
+    <input type="checkbox" name="condiment" value="Tương cà"> Tương cà <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

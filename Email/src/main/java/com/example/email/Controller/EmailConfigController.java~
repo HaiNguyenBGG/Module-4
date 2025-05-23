@@ -1,0 +1,30 @@
+package com.example.email.Controller;
+
+import com.example.email.model.EmailConfig;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+@Controller
+public class EmailConfigController {
+    private EmailConfig emailConfig = new  EmailConfig();
+
+    @GetMapping("/config")
+    public String showConfig(Model model) {
+        model.addAttribute("emailConfig", emailConfig);
+        return "config";
+    }
+    @GetMapping("/edit")
+    public String editConfig(Model model){
+        model.addAttribute("emailConfig", emailConfig);
+        return "edit";
+    }
+
+    @PostMapping("update")
+    public String updateConfig(@ModelAttribute EmailConfig config){
+        emailConfig = config;
+        return "redirect:/config";
+    }
+}
